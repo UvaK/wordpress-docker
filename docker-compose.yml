@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  wordpress:
+    build: wordpress/php7.1/apache
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_PASSWORD: example
+      WORDPRESS_DEBUG: 1
+
+  mysql:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: example
